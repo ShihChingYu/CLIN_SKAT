@@ -1,0 +1,4 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("stats", "chisq.test", "fisher.test", "lm")
+importFrom("utils", "read.table", "write.table")
+importFrom("utils", "read.csv")

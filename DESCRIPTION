@@ -1,0 +1,24 @@
+Package: skatvcf
+Type: Package
+Title: skatvcf: an R package for convert vcf, calculate logistic weight, related genes to pathways and statsitial analysis
+Version: 0.1.0
+Date: 2021-08-16
+Author: Shih Ching Yu
+Maintainer: Shih Ching Yu <cyshih30@gmail.com>
+Description: an R package for convert vcf, calculate logistic weight, related genes to pathways 
+  and statsitial analysis.
+biocViews: Software
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Imports:
+    TransAT,
+    vcfR,
+    SKAT,
+    data.table,
+    dplyr,
+    survival,
+    survminer
+Depends:
+    R (>= 4.0.0)
+RoxygenNote: 7.1.1

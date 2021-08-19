@@ -1,0 +1,32 @@
+PLINK v1.90b6.24 64-bit (6 Jun 2021)
+Options in effect:
+  --allow-no-sex
+  --make-bed
+  --out subbackToPLINK
+  --recode
+  --vcf merged_all_0801_anno.hg19_multianno.vcf.gz
+
+Hostname: DESKTOP-TJ0SL97
+Working directory: C:\Users\user2\Desktop\survival_skat
+Start time: Thu Aug 19 15:28:06 2021
+
+Random number seed: 1629358086
+8036 MB RAM detected; reserving 4018 MB for main workspace.
+--vcf: subbackToPLINK-temporary.bed + subbackToPLINK-temporary.bim +
+subbackToPLINK-temporary.fam written.
+125988 variants loaded from .bim file.
+53 people (0 males, 0 females, 53 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to subbackToPLINK.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 53 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.0225743.
+125988 variants and 53 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to subbackToPLINK.bed + subbackToPLINK.bim + subbackToPLINK.fam ...
+done.
+--recode ped to subbackToPLINK.ped + subbackToPLINK.map ... done.
+
+End time: Thu Aug 19 15:28:07 2021
