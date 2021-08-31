@@ -20,3 +20,5 @@ relatetoDisease<-function(genelist){
   return(g_d)
 }
 
+
+

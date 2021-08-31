@@ -1,6 +1,6 @@
 #' @title weighting based on minor allele frequency
 #' @description read vcf.gz and transform into Plink to do SAKT analysis
-#' @name Get_Logistic_Weights_MAF
+#' @name Get_Logistic_Weights_MAF_POP
 #'
 #' @param dat input data with column chr, start, end, ref, alt to retrieve MAF in specified population
 #' @param pop population frequency in TransAT package. Default is "db_gnomAD_exome_freq"
@@ -16,7 +16,7 @@
 #' weights_MAF<-Get_Logistic_Weights_MAF(dat, pop="db_gnomAD_exome_freq", par1= 0.07, par2=150)
 #' }
 #'
-Get_Logistic_Weights_MAF<-function(dat, pop="db_gnomAD_exome_freq", par1= 0.07, par2=150){
+Get_Logistic_Weights_MAF_POP<-function(dat, pop="db_gnomAD_exome_freq", par1= 0.07, par2=150){
 
   dat1<-TransAT::pop_freq(dat, pop)
   match_col<-grep("freq$", colnames(dat1), ignore.case = T)

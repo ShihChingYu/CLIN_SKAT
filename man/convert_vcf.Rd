@@ -4,12 +4,17 @@
 \alias{convert_vcf}
 \title{Convert vcf data into plink format}
 \usage{
-convert_vcf(vcf, outputfile = "subbackToPLINK")
+convert_vcf(vcf, outputfile = "subbackToPLINK", formula, out_type = "C")
 }
 \arguments{
 \item{vcf}{A vcf.gz format to read into the function}
 
 \item{outputfile}{file name when write out}
+
+\item{formula}{an object of class formula}
+
+\item{out_type}{an indicator of the outcome type. "C" for the continuous outcome and "D" for
+the dichotomous outcome}
 }
 \value{
 a plink format with .map .bim .fam .bed .SetID for Generate_SSD_SetID
@@ -20,7 +25,8 @@ read vcf.gz and transform into Plink to do SAKT analysis
 \examples{
 \dontrun{
 dat<-system.file("extdata", "sub10k.vcf.gz", package = "skatvcf")
-plink_data<-convert_vcf(vcf=dat, outputfile="subbackToPLINK")
+formula=as.formula(y~1)
+plink_data<-convert_vcf(vcf=dat, outputfile="subbackToPLINK", formula=formula, out_type="C")
 }
 
 }

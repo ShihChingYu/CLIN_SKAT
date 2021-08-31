@@ -1,9 +1,13 @@
 #' @title Convert vcf data into plink format
-#' @description read vcf.gz and transform into Plink to do SAKT analysis
+#' @description read vcf.gz and transform into Plink to do SKAT analysis
 #' @name convert_vcf
 #'
 #' @param vcf A vcf.gz format to read into the function
 #' @param outputfile file name when write out
+#' @param formula an object of class formula
+#' @param out_type an indicator of the outcome type. "C" for the continuous outcome and "D" for
+#' the dichotomous outcome
+#' @param SNP_weight output object from Read_SNP_WeightFile (default=NULL)
 #' @import vcfR
 #' @import SKAT
 #' @import data.table
@@ -12,11 +16,12 @@
 #' @examples
 #' \dontrun{
 #' dat<-system.file("extdata", "sub10k.vcf.gz", package = "skatvcf")
-#' plink_data<-convert_vcf(vcf=dat, outputfile="subbackToPLINK")
+#' formula=as.formula(y~1)
+#' plink_data<-convert_vcf(vcf=dat, outputfile="subbackToPLINK", formula=formula, out_type="C")
 #' }
 #'
 
-convert_vcf<-function(vcf, outputfile="subbackToPLINK"){
+convert_vcf<-function(vcf, outputfile="subbackToPLINK", formula, out_type="C", SNP_weight=NULL){
 
   data_command<-paste0("C:/Users/user2/Desktop/survival_skat/plink --vcf ", vcf, " --allow-no-sex --make-bed --recode --out ", outputfile)
   system(data_command)
@@ -46,8 +51,15 @@ convert_vcf<-function(vcf, outputfile="subbackToPLINK"){
   dat_SSD<-paste0(getwd(), "/", outputfile, ".SSD")
   dat_Info<-paste0(getwd(), "/", outputfile, ".SSD.info")
 
-
   SKAT::Generate_SSD_SetID(dat_bed, dat_bim, dat_fam, dat_SetID, dat_SSD, dat_Info)
+
+  SSD.INFO<-SKAT::Open_SSD(dat_SSD, dat_Info)
+  FAM<-SKAT::Read_Plink_FAM(dat_fam, Is.binary=FALSE)
+  y<-FAM$Phenotype
+  obj<-SKAT::SKAT_Null_Model(formula, out_type=out_type)
+  out<-SKAT::SKAT.SSD.All(SSD.INFO, obj, obj.SNPWeight=SNP_weight)
+  return(out)
+  SKAT::Close_SSD()
 }
 
 

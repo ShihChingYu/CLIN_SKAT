@@ -1,5 +1,5 @@
 #' @title statistical analysis with SNP information in addition to meta data
-#' @description users can shoose different statistical methods to test significant variants
+#' @description users can choose different statistical methods to test significant variants
 #' @name statistical_test
 #'
 #' @param data a data with SNP and meta data
@@ -19,7 +19,7 @@
 #' dat$X1.161298236A.G<-as.factor(dat$X1.161298236A.G)
 #' mt<-table(dat$Gender, dat$X1.161298236A.G)
 #' fisher_test<-stat_test(data=mt, method="fisher")
-stat_test<-function(data, method=c("fisher", "chisq", "lm", "survfit", "coxph"), formula){
+statistical_test<-function(data, method=c("fisher", "chisq", "lm", "survfit", "coxph"), formula){
   if (method == "fisher"){
     res<-fisher.test(data)$p.value
   }else if (method == "chisq"){

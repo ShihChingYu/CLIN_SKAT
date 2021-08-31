@@ -1,6 +1,6 @@
 Package: skatvcf
 Type: Package
-Title: skatvcf: an R package for convert vcf, calculate logistic weight, related genes to pathways and statsitial analysis
+Title: skatvcf: an R package for convert vcf, calculating logistic weight, relating genes to pathways and statsitial analysis
 Version: 0.1.0
 Date: 2021-08-16
 Author: Shih Ching Yu
