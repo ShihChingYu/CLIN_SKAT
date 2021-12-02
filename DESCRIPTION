@@ -18,7 +18,13 @@ Imports:
     data.table,
     dplyr,
     survival,
-    survminer
+    survminer,
+    biomaRt,
+    msigdbr,
+    clusterProfiler,
+    magrittr,
+    ggplot2,
+    plyr
 Depends:
     R (>= 4.0.0)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
