@@ -32,7 +32,7 @@ read vcf.gz and transform into Plink to do SKAT analysis
 }
 \examples{
 \dontrun{
-dat<-system.file("extdata", "sub10k.vcf.gz", package = "skatvcf")
+dat<-system.file("extdata", "sub10k.vcf.gz", package = "CLINSKAT")
 formula=as.formula(y~1)
 plink_data<-convert_vcf(vcf=dat, outputfile="subbackToPLINK", formula=formula, out_type="C")
 }

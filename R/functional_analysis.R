@@ -14,15 +14,15 @@
 #' @return a table containing varaibles and p-value
 #' @export
 #' @examples
-#' dat<-read.csv(system.file("extdata", "merged_clinical_variant_data1_md.csv", package = "skatvcf"),
+#' dat<-read.csv(system.file("extdata", "merged_clinical_variant_data1_md.csv", package = "CLINSKAT"),
 #'              stringsAsFactors = FALSE, encoding = "UTF-8", row.names = NULL, sep = ",")
 #' sur_model<-as.formula("survival::Surv(Follow_up_months, Last_Status) ~ X3.142172064C.G")
-#' KM_result<-statistical_test(data=dat, method="survfit", formula = sur_model)
+#' KM_result<-functional_analysis(data=dat, method="survfit", formula = sur_model)
 #'
 #' dat$Gender<-as.factor(dat$Gender)
 #' dat$X1.161298236A.G<-as.factor(dat$X1.161298236A.G)
 #' mt<-table(dat$Gender, dat$X1.161298236A.G)
-#' fisher_test<-statistical_test(data=mt, method="fisher")
+#' fisher_test<-functional_analysis(data=mt, method="fisher")
 #'
 functional_analysis<-function(data, method=c("fisher", "chisq", "glm", "survfit", "coxph"), formula){
   if (method == "fisher"){

@@ -28,7 +28,7 @@ read vcf.gz and transform into Plink to do SAKT analysis
 }
 \examples{
 \dontrun{
-dat<-read.csv(system.file("extdata", "anno_freq_data.csv", package = "skatvcf"),
+dat<-read.csv(system.file("extdata", "anno_freq_data.csv", package = "CLINSKAT"),
              stringsAsFactors = FALSE, encoding = "UTF-8", row.names = NULL, sep = ",")
 weights_MAF<-Get_Logistic_Weights_MAF(dat, pop="db_gnomAD_exome_freq", par1= 0.07, par2=150)
 }

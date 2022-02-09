@@ -24,7 +24,7 @@ a table including pathways, gene ratio, background ratio, and p-value
 relate a list of genes, convert ensemble ID to gene ID and pathway enrichment analysis
 }
 \examples{
-dat<-read.csv(system.file("extdata", "asso001.csv", package = "skatvcf"),
+dat<-read.csv(system.file("extdata", "asso001.csv", package = "CLINSKAT"),
              stringsAsFactors = FALSE, encoding = "UTF-8", row.names = NULL, sep = ",")
 gene_disease<-relate2GeneDisease(SNPdata=dat, species="Homo sapiens", category="H")
 
