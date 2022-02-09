@@ -1,12 +1,11 @@
-Package: skatvcf
+Package: CLINSKAT 
 Type: Package
-Title: skatvcf: an R package for convert vcf, calculating logistic weight, relating genes to pathways and statsitial analysis
-Version: 0.1.0
-Date: 2021-08-16
+Title: CLINSKAT : an R package for functional analysis, annotate gene and pathways analysis, calculate logistic weights and do skat analysis
+Version: 0.1.1
+Date: 2022-02-09
 Author: Shih Ching Yu
 Maintainer: Shih Ching Yu <cyshih30@gmail.com>
-Description: an R package for convert vcf, calculate logistic weight, related genes to pathways 
-  and statsitial analysis.
+Description: an R package for functional analysis, annotate gene and pathways analysis, calculate logistic weights and do skat analysis.
 biocViews: Software
 License: GPL-2
 Encoding: UTF-8

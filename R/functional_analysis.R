@@ -1,9 +1,9 @@
 #' @title statistical analysis with SNP information in addition to meta data
 #' @description users can choose different statistical methods to test significant variants
-#' @name statistical_test
+#' @name functional_analysis
 #'
 #' @param data a data with SNP and meta data
-#' @param method statistical methods including "fisher", "chisq", "lm", "survfit", "coxph"
+#' @param method statistical methods including "fisher", "chisq", "glm", "survfit", "coxph"
 #' @param formula a symbolic descripton of the model to be fitted
 #' @import survival
 #' @import survminer
@@ -24,13 +24,13 @@
 #' mt<-table(dat$Gender, dat$X1.161298236A.G)
 #' fisher_test<-statistical_test(data=mt, method="fisher")
 #'
-statistical_test<-function(data, method=c("fisher", "chisq", "lm", "survfit", "coxph"), formula){
+functional_analysis<-function(data, method=c("fisher", "chisq", "glm", "survfit", "coxph"), formula){
   if (method == "fisher"){
     res<-fisher.test(data)$p.value
   }else if (method == "chisq"){
     res<-chisq.test(data)$p.value
-  }else if (method == "lm"){
-    res<-summary(lm(formula, data = data))$coefficients[,4]
+  }else if (method == "glm"){
+    res<-coef(summary(glm(formula, data = data)))[,4]
   }else if (method == "survfit"){
     res<-survminer::surv_pvalue(survminer::surv_fit(formula, data=data))
   }else if (method == "coxph"){
