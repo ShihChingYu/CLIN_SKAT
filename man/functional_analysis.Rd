@@ -6,7 +6,7 @@
 \usage{
 functional_analysis(
   data,
-  method = c("fisher", "chisq", "glm", "survfit", "coxph"),
+  method = c("fisher", "chisq", "glm", "survfit", "coxph", "t_test", "CAtest"),
   formula
 )
 }
@@ -33,5 +33,5 @@ dat$Gender<-as.factor(dat$Gender)
 dat$X1.161298236A.G<-as.factor(dat$X1.161298236A.G)
 mt<-table(dat$Gender, dat$X1.161298236A.G)
 fisher_test<-functional_analysis(data=mt, method="fisher")
-
+CAtest<-functional_analysis(data=mt, method="CAtest")
 }

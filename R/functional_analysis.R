@@ -7,6 +7,7 @@
 #' @param formula a symbolic descripton of the model to be fitted
 #' @import survival
 #' @import survminer
+#' @import DescTools
 #' @importFrom dplyr mutate arrange left_join group_by select summarise summarize
 #' @importFrom magrittr `%>%`
 #' @importFrom ggplot2 aes theme_bw theme element_blank
@@ -23,8 +24,8 @@
 #' dat$X1.161298236A.G<-as.factor(dat$X1.161298236A.G)
 #' mt<-table(dat$Gender, dat$X1.161298236A.G)
 #' fisher_test<-functional_analysis(data=mt, method="fisher")
-#'
-functional_analysis<-function(data, method=c("fisher", "chisq", "glm", "survfit", "coxph"), formula){
+#' CAtest<-functional_analysis(data=mt, method="trend_test")
+functional_analysis<-function(data, method=c("fisher", "chisq", "glm", "survfit", "coxph", "t_test", "trend_test"), formula){
   if (method == "fisher"){
     res<-fisher.test(data)$p.value
   }else if (method == "chisq"){
@@ -35,6 +36,10 @@ functional_analysis<-function(data, method=c("fisher", "chisq", "glm", "survfit"
     res<-survminer::surv_pvalue(survminer::surv_fit(formula, data=data))
   }else if (method == "coxph"){
     res<-summary(survival::coxph(formula, data=data))$coefficients[,5]
+  }else if (method == "t_test"){
+    res<-t.test(dat$Age, dat$X1.161298236A.G)$p.value
+  }else if (method == "trend_test"){
+    res<-DescTools::CochranArmitageTest(data)$p.value
   }else stop("invalid type")
 
   #creat table for Manhattan plot

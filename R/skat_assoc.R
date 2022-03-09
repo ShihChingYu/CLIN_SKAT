@@ -1,6 +1,6 @@
 #' @title Convert vcf data into plink format
 #' @description read vcf.gz and transform into Plink to do SKAT analysis
-#' @name convert_vcf
+#' @name skat_assoc
 #'
 #' @param vcf A vcf.gz format to read into the function
 #' @param outputfile file name when write out
@@ -17,11 +17,11 @@
 #' \dontrun{
 #' dat<-system.file("extdata", "sub10k.vcf.gz", package = "CLINSKAT")
 #' formula=as.formula(y~1)
-#' plink_data<-convert_vcf(vcf=dat, outputfile="subbackToPLINK", formula=formula, out_type="C")
+#' plink_data<-skat_assoc(vcf=dat, outputfile="subbackToPLINK", formula=formula, out_type="C")
 #' }
 #'
 
-convert_vcf<-function(vcf, outputfile="subbackToPLINK", formula, out_type="C", SNP_weight=NULL){
+skat_assoc<-function(vcf, outputfile="subbackToPLINK", formula, out_type="C", SNP_weight=NULL){
 
   data_command<-paste0("C:/Users/user2/Desktop/survival_skat/plink --vcf ", vcf, " --allow-no-sex --make-bed --recode --out ", outputfile)
   system(data_command)

@@ -1,8 +1,8 @@
 Package: CLINSKAT 
 Type: Package
 Title: CLINSKAT : an R package for functional analysis, annotate gene and pathways analysis, calculate logistic weights and do skat analysis
-Version: 0.1.1
-Date: 2022-02-09
+Version: 0.1.2
+Date: 2022-03-09
 Author: Shih Ching Yu
 Maintainer: Shih Ching Yu <cyshih30@gmail.com>
 Description: an R package for functional analysis, annotate gene and pathways analysis, calculate logistic weights and do skat analysis.
@@ -23,7 +23,8 @@ Imports:
     clusterProfiler,
     magrittr,
     ggplot2,
-    plyr
+    plyr,
+    DescTools
 Depends:
     R (>= 4.0.0)
 RoxygenNote: 7.1.2
