@@ -24,7 +24,9 @@ Imports:
     magrittr,
     ggplot2,
     plyr,
-    DescTools
+    DescTools,
+    qqman,
+    BEDMatrix
 Depends:
     R (>= 4.0.0)
 RoxygenNote: 7.1.2

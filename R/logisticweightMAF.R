@@ -13,7 +13,7 @@
 #' \dontrun{
 #' dat<-read.csv(system.file("extdata", "anno_freq_data.csv", package = "CLINSKAT"),
 #'              stringsAsFactors = FALSE, encoding = "UTF-8", row.names = NULL, sep = ",")
-#' weights_MAF<-Get_Logistic_Weights_MAF(dat, pop="db_gnomAD_exome_freq", par1= 0.07, par2=150)
+#' weights_MAF<-Get_Logistic_Weights_MAF_POP(dat, pop="db_gnomAD_exome_freq", par1= 0.07, par2=150)
 #' }
 #'
 Get_Logistic_Weights_MAF_POP<-function(dat, pop="db_gnomAD_exome_freq", par1= 0.07, par2=150){
