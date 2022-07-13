@@ -14,6 +14,4 @@ devtools::install_github("ShihChingYu/CLINSKAT", force=T)
 library(CLINSKAT)
 ```
 
-## Usage of convet\_tanscriptID()
 
-This is a basic example which shows you how to solve a common problem:
