@@ -22,7 +22,3 @@ CLIN_SKAT is a package within the R programming language to (i) first extract cl
 devtools::install_github("ShihChingYu/CLIN_SKAT", force=T)
 library(CLIN_SKAT)
 ```
-
-## Usage of convet_tanscriptID()
-
-This is a basic example which shows you how to solve a common problem:
