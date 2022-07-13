@@ -14,7 +14,10 @@
 #'
 
 clin_qq <- function(gwas){
-  qqman::qq(gwas)
+  chisq = qchisq(gwas$P,1,lower.tail=FALSE)
+  lambda<-median(chisq,na.rm=TRUE)/qchisq(0.5,1)
+
+  qqman::qq(gwas, main=paste("lambda = " , lambda))
 }
 
 
