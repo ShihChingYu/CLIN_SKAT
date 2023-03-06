@@ -1,4 +1,4 @@
-Package: CLIN_SKAT 
+Package: CLIN.SKAT 
 Type: Package
 Title: CLIN_SKAT : an R package for functional analysis, annotate gene and pathways analysis, calculate logistic weights and do skat analysis
 Version: 0.1.2
